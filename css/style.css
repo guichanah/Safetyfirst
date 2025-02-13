@@ -42,6 +42,14 @@ header {
   position: fixed;
 }
 
+#mobileheader {
+  display: none;
+}
+
+#mobilemenu {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 1920px;
@@ -111,6 +119,7 @@ nav {
 
 #mainvisual {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +133,8 @@ nav {
 #mainvisual h4::before {
   content: "|";
   color: #F44336;
+  display: inline-block;
+  vertical-align: 3px;
 }
 #mainvisual .swiper {
   width: 100%;
@@ -402,6 +413,9 @@ nav {
 #location {
   margin-top: 4vw;
 }
+#location iframe {
+  padding: 1vw 0;
+}
 
 footer {
   width: 100%;
@@ -423,6 +437,12 @@ footer hr {
 }
 
 @media all and (max-width: 1060px) {
+  .container {
+    padding: 0 6vw;
+  }
+  .inner {
+    padding: 0 6vw;
+  }
   #product1 .glove-item {
     width: 48%;
     margin-bottom: 1vw;
@@ -432,11 +452,114 @@ footer hr {
     margin-bottom: 1vw;
   }
 }
-@media all and (max-width: 820px) {
+@media all and (max-width: 870px) {
+  header {
+    background: transparent;
+    border-bottom: none;
+  }
+  .container {
+    padding: 0 5vw;
+  }
+  .logo {
+    margin: 3px 0;
+  }
+  .logo img {
+    height: 50px;
+  }
   .tabs {
     justify-content: start;
   }
   .safetytabs {
     justify-content: start;
+  }
+  .inner {
+    padding: 0 5vw;
+  }
+  nav {
+    display: none;
+  }
+  #mobileheader {
+    display: block;
+  }
+  #mobileheader .xi-bars {
+    color: #fff;
+  }
+  #mobilemenu {
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 56px;
+    z-index: 500;
+    transition: all 0.3s;
+  }
+  #mobilemenu.active {
+    height: 100%;
+  }
+  #mobilemenu .btn {
+    display: block;
+    font-size: 16px;
+    color: #ddd;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #333;
+    line-height: 1em;
+    padding: 20px;
+    border: 1px solid #000;
+    border-top-color: #5c5c5c;
+    position: relative;
+  }
+  #mobilemenu .btn::before,
+  #mobilemenu .btn::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    right: 20px;
+    top: 50%;
+    margin-top: -1.5px;
+    background: #fff;
+    transition: all 0.4s;
+  }
+  #mobilemenu .btn::after {
+    transform: rotate(90deg);
+  }
+  #mobilemenu li.active .btn::before,
+  #mobilemenu li.active .btn::after {
+    transform: rotate(180deg);
+  }
+  #mobilemenu .submenu1 {
+    height: 0;
+    display: block;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+  #mobilemenu .submenu1 a {
+    display: block;
+    padding: 0 30px;
+    font-size: 15px;
+    color: #777;
+    background: #f1f1f1;
+    line-height: 45px;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    text-decoration: none;
+  }
+  #mobilemenu li.active .threelines {
+    height: 135px;
+  }
+  #mobilemenu li.active .fourlines {
+    height: 180px;
+  }
+}
+@media all and (max-width: 665px) {
+  footer #footerinfo {
+    flex-direction: column;
+  }
+  footer hr {
+    margin: 3vw 0;
   }
 }/*# sourceMappingURL=style.css.map */
