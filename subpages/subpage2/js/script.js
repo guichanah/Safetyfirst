@@ -52,7 +52,7 @@ var pdtbtns = document.querySelectorAll(".btn1");
 var btnss = document.querySelectorAll(".submenu2 a");
 
         function removeActive(b,t){
-            var actives = document.querySelectorAll("#productmenu .active");
+            var actives = document.querySelectorAll(".productlist .active");
             
             //NodeList를 배열로 변환하는 과정
             var actives = Array.from(actives);
@@ -77,7 +77,7 @@ var btnss = document.querySelectorAll(".submenu2 a");
                     target.classList.add("active");
                 });
                 this.classList.add("active");
-                //removeActive(this, targets);
+                removeActive(this, targets);
             }); 
         });
 
@@ -95,7 +95,15 @@ mobilemenubtn.addEventListener("click", function(){
 
 const num = new URLSearchParams(window.location.search).get("num");
 
-if(num == 1){
+if(!isNaN(num)){
     i = num-1;
-    pdtbtns[i].parentElement.classList.toggle("active");
+    var parent = pdtbtns[i].parentElement;
+    parent.classList.toggle("active");
+    var target_text = parent.querySelector(".submenu2 a").getAttribute("href");
+    var targetss = document.querySelectorAll(target_text);
+    targetss.forEach(function(target){
+        target.classList.add("active");
+    });
+    //console.log(pdtbtns);
+
 }
