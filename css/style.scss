@@ -37,7 +37,7 @@ header {
 .logo{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .logo img{height: 70px;}
@@ -359,15 +359,17 @@ footer {
 
 
 @media all and (max-width:870px){
-    header{background: transparent; border-bottom: none;}
+    header{background: transparent; border-bottom: none;
+        &.scrolled{background: #fff; border-bottom: 1px solid #ccc;}
+    }
     
     .container{padding: 0 5vw;}
     .logo{margin: 3px 0;}
     .logo img{height: 50px;}
-    .tabs {
+    #product1 .tabs {
         justify-content: start;
     }
-    .safetytabs {
+    #product2 .safetytabs {
         justify-content: start;
     }
     .inner{padding: 0 5vw;}
@@ -375,7 +377,7 @@ footer {
     
     //모바일메뉴
     #mobileheader{display: block;
-        .xi-bars{color: #fff;}
+        .xi-bars{color: #F44336;}
     }
     #mobilemenu{width: 300px; height: 0; overflow: hidden; display: block;
         position: fixed; right: 0; top: 56px; z-index: 500; transition: all .3s;}

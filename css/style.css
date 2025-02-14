@@ -62,7 +62,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .logo img {
@@ -457,6 +457,10 @@ footer hr {
     background: transparent;
     border-bottom: none;
   }
+  header.scrolled {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+  }
   .container {
     padding: 0 5vw;
   }
@@ -466,10 +470,10 @@ footer hr {
   .logo img {
     height: 50px;
   }
-  .tabs {
+  #product1 .tabs {
     justify-content: start;
   }
-  .safetytabs {
+  #product2 .safetytabs {
     justify-content: start;
   }
   .inner {
@@ -482,7 +486,7 @@ footer hr {
     display: block;
   }
   #mobileheader .xi-bars {
-    color: #fff;
+    color: #F44336;
   }
   #mobilemenu {
     width: 300px;

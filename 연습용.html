@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장갑 종류</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .tab {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: lightgray;
+        }
+
+        .glove-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .glove-item {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 150px;
+        }
+
+        .glove-item img {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .glove-info {
+            color: black;
+            font-size: 14px;
+            text-align: left;
+            padding: 5px;
+        }
+
+        .load-more {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .load-more:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <div class="tab active" data-category="cotton">면장갑</div>
+        <div class="tab" data-category="coated">코팅장갑</div>
+        <div class="tab" data-category="argon">알곤장갑</div>
+        <div class="tab" data-category="welding">용접장갑</div>
+    </div>
+
+    <div class="glove-container" id="gloveContainer"></div>
+
+    <button class="load-more" id="loadMoreBtn">+더보기</button>
+
+    <script>
+          const gloveData = {
+    cotton: [
+        { img: "image/cotton40g.png", name: "면장갑 400g 검정", quantity: "300켤레", feature: "중국산", info: "10G 원사" },
+        { img: "image/cotton45g.png", name: "면장갑 450g 빨강", quantity: "300켤레", feature: "중국산", info: "10G 원사" },
+        { img: "image/cotton50g.png", name: "면장갑 500g 파랑", quantity: "300켤레", feature: "중국산", info: "10G 원사" },
+        { img: "image/dot.png", name: "도트장갑", quantity: "300켤레", feature: "중국산", info: "면 100%, 라텍스" },
+        { img: "image/driver.png", name: "예식장갑", quantity: "1000켤레", feature: "중국산", info: "민자 25㎝ 18g"}
+    ],
+    coated: [
+        { img: "coated1.png", name: "코팅장갑 빨강", quantity: "500켤레", feature: "국산", info: "PU코팅" },
+        { img: "coated2.png", name: "코팅장갑 파랑", quantity: "450켤레", feature: "중국산", info: "NBR코팅" },
+        { img: "coated3.png", name: "코팅장갑 초록", quantity: "400켤레", feature: "국산", info: "라텍스코팅" }
+    ],
+    argon: [
+        { img: "argon1.png", name: "알곤장갑 소가죽", quantity: "150켤레", feature: "국산", info: "내열성 우수" },
+        { img: "argon2.png", name: "알곤장갑 양가죽", quantity: "120켤레", feature: "중국산", info: "부드러운 촉감" }
+    ],
+    welding: [
+        { img: "welding1.png", name: "용접장갑 두꺼운형", quantity: "100켤레", feature: "국산", info: "내화성 우수" },
+        { img: "welding2.png", name: "용접장갑 일반형", quantity: "80켤레", feature: "중국산", info: "경제적인 가격" }
+    ]
+};
+
+let currentCategory = "cotton";
+
+function loadGloves(category) {
+    const gloveContainer = document.getElementById("gloveContainer");
+    gloveContainer.innerHTML = "";
+
+    gloveData[category].forEach(item => {
+        const gloveItem = document.createElement("div");
+        gloveItem.classList.add("glove-item");
+        gloveItem.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <div class="glove-info">
+                <strong>품명:</strong> ${item.name} <br>
+                <strong>수량:</strong> ${item.quantity} <br>
+                <strong>특성:</strong> ${item.feature} <br>
+                <strong>정보:</strong> ${item.info}
+            </div>
+        `;
+        gloveContainer.appendChild(gloveItem);
+    });
+
+    document.getElementById("loadMoreBtn").style.display = "block";
+    currentCategory = category;
+}
+
+document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", function () {
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
+        loadGloves(this.getAttribute("data-category"));
+    });
+});
+
+document.getElementById("loadMoreBtn").addEventListener("click", function () {
+    const gloveContainer = document.getElementById("gloveContainer");
+
+    const extraGloves = [
+        { img: `${currentCategory}4.png`, name: `${currentCategory} 추가 제품`, quantity: "100켤레", feature: "추가 정보", info: "상세 설명" }
+    ];
+
+    extraGloves.forEach(item => {
+        const gloveItem = document.createElement("div");
+        gloveItem.classList.add("glove-item");
+        gloveItem.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <div class="glove-info">
+                <strong>품명:</strong> ${item.name} <br>
+                <strong>수량:</strong> ${item.quantity} <br>
+                <strong>특성:</strong> ${item.feature} <br>
+                <strong>정보:</strong> ${item.info}
+            </div>
+        `;
+        gloveContainer.appendChild(gloveItem);
+    });
+
+    this.style.display = "none";
+});
+
+        // 페이지 로드 시 기본값 설정
+        loadGloves(currentCategory);
+    </script>
+
+</body>
+</html>

@@ -1,3 +1,12 @@
+//var menubtn = new EzenAddClass(".button");
+
+
+var topmenu = new EzenScrollClass("header",{
+    baseline:10,
+    //markers: true
+}); 
+
+
 const swiper = new Swiper('#mainvisual .swiper', {
     // Optional parameters
     
@@ -105,7 +114,7 @@ const productData = {
     ],
     safety2: [
         { img: "image/jeansleeve.png", name: "청토시 겨울/여름", quantity: "100EA", feature: "겨울/여름", info: "우수한 시보리" },
-        { img: "image/lethershoulder.png", name: "가죽어깨토시", quantity: "60EA", feature: "어깨끈", info: "손목 벨크로" },
+        { img: "image/leathershoulder.png", name: "가죽어깨토시", quantity: "60EA", feature: "어깨끈", info: "손목 벨크로" },
         { img: "image/jeangaiterB.png", name: "청각반 B", quantity: "150켤레", feature: "일반형", info: "검정밴드, 벨크로" },
         { img: "image/skirtgaiter.png", name: "무재해치마각반", quantity: "200켤레", feature: "치마형", info: "무재해각반" }
     ],
@@ -113,16 +122,16 @@ const productData = {
         { img: "image/raincoat1.png", name: "일회용우의", quantity: "300EA", feature: "백/황/청색", info: "PE신재" },
         { img: "image/raincoat2.png", name: "EVA우의", quantity: "100EA", feature: "백/황/청/적색", info: "EVA소재" },
         { img: "image/raincoat3.png", name: "신사우의 투피스", quantity: "30EA", feature: "곤색 L~3XL", info: "폴리에스터/PVC코팅" },
-        { img: "image/raincoat4.png", name: "고급우의", quantity: "10EA", feature: "형광곤색/올형광 L~3XL", info: "안감올망사/PVC코팅" }
+        { img: "image/raincoat4.png", name: "고급우의", quantity: "10EA", feature: "형광곤색 L~3XL", info: "안감올망사/PVC코팅" }
     ],
     safety4: [
         { img: "image/boots1.png", name: "패션여장화", quantity: "10켤레", feature: "230~250mm", info: "PVC신소재" },
-        { img: "image/boots2.png", name: "패션장화 A", quantity: "10켤레", feature: "250~300mm", info: "PVC신소재" },
-        { img: "image/boots3.png", name: "카프장화 A", quantity: "10켤레", feature: "250~300mm", info: "PVC신소재" },
+        { img: "image/boots2.png", name: "패션장화", quantity: "10켤레", feature: "250~300mm", info: "PVC신소재" },
+        { img: "image/boots3.png", name: "카프장화", quantity: "10켤레", feature: "250~300mm", info: "PVC신소재" },
         { img: "image/chesterboots.png", name: "가슴장화", quantity: "10켤레", feature: "230~300mm", info: "PVC체스터" }
     ],
     safety5: [
-        { img: "image/workwear1.png", name: "용접자켓겨울", quantity: "15EA", feature: "L~3XL", info: "등판 통가죽" },
+        { img: "image/workwear1.png", name: "용접자켓겨울", quantity: "15EA", feature: "L~3XL, 소가죽 3층피", info: "등판 통가죽" },
         { img: "image/workwear2.png", name: "용접멜빵바지", quantity: "10EA", feature: "L~3XL", info: "엉덩이부분 2중덧댐" },
         { img: "image/workwear3.png", name: "방진복원피스", quantity: "24EA", feature: "XL~3XL", info: "60gsm" },
         { img: "image/workwear4.png", name: "신호수조끼", quantity: "100EA", feature: "망사/천 L~3XL", info: "반사띠" }
