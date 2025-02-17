@@ -77,9 +77,9 @@ function loadGloves(category) {
         const gloveItem = document.createElement("div");
         gloveItem.classList.add("glove-item");
         gloveItem.innerHTML = `
-            <a href="product.html?name=${encodeURIComponent(item.name)}">
+            <p>
                 <img src="${item.img}" alt="${item.name}">
-            </a>
+            </p>
             <div class="glove-info">
                 <strong>품 명:</strong> ${item.name} <br>
                 <strong>수 량:</strong> ${item.quantity} <br>
@@ -155,9 +155,9 @@ function loadProducts(category, loadMore = false) {
         const productItem = document.createElement("div");
         productItem.classList.add("product-item");
         productItem.innerHTML = `
-            <a href="product.html?name=${encodeURIComponent(item.name)}">
+            <p>
                 <img src="${item.img}" alt="${item.name}">
-            </a>
+            </p>
             <div class="product-info">
                 <strong>품 명:</strong> ${item.name} <br>
                 <strong>수 량:</strong> ${item.quantity} <br>
