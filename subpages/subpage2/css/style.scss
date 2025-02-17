@@ -10,7 +10,7 @@ a{text-decoration: none;}
 
 /*헤더*/
 body {
-    font-family: Arial, sans-serif;
+    overflow-y: scroll;
 }
 
 header {
@@ -23,12 +23,11 @@ header {
     z-index: 9999;
     position: fixed;
 }
-#mobileheader{display: none;}
-#mobilemenu{display: none;}
+
 .container {
     width: 100%;
     max-width: 1920px;
-    padding: 0 11.5vw; /* 좌우 패딩 설정 */
+    padding: 0 15.5vw; /* 좌우 패딩 설정 */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,8 +47,9 @@ nav {
 
 .menu {
     display: flex;
+    gap: 15vw;
     list-style: none;
-    justify-content: space-between; /* 좌우 정렬 */
+    justify-content: center; /* 좌우 정렬 */
     width: 100%;
 }
 
@@ -62,7 +62,7 @@ nav {
 .menu li a {
     text-decoration: none;
     color: black;
-    padding: 28px 10px;
+    padding: 0px 10px;
 }
 
 .menu li a:hover {
@@ -112,6 +112,8 @@ nav {
     height: 45px; border: 1px solid #ddd; border-top: 0;
     text-decoration: none;}
 
+#productmenu .submenu2 a.active_btn{background: lightgray; color: #333;}
+
 #productmenu li.active .threelines{height: 135px;}
 #productmenu li.active .fourlines{height: 180px;}
 
@@ -142,11 +144,13 @@ main {
 
 
 .productlist{width: 70%; flex-wrap: wrap;}
-.productlist1{display: flex; width: 100%; flex-wrap: wrap;}
-.products{display: flex; padding-top: 3vw; width: 50%; gap: 2vw; align-items: center;}
-.productimg{width: 33.1%;}
+.productlist1{display: flex; width: 100%; flex-wrap: wrap; word-break: keep-all;}
+.products{display: flex; padding: 3vw 0; width: 50%; gap: 2vw; align-items: center;}
+.productimg{width: 33.1%; min-width: 150px;}
 .productimg img{width: 100%;}
-.productinfo{display: flex; flex-direction: column; width: 66.9%; gap: .4vw;}
+.productinfo{display: flex; flex-direction: column; width: 66.9%; gap: .4vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 
@@ -176,43 +180,17 @@ footer {
 
 
 @media all and (max-width:870px){
-    header{background: transparent; border-bottom: none;
+    header{background: transparent; 
         &.scrolled{background: #fff; border-bottom: 1px solid #ccc;}
     }
-    main{padding-top: 0;}
+    main{padding-top: 57px;}
     .container{padding: 0 5vw;}
     .logo{margin: 3px 0;}
     .logo img{height: 50px;}
     .inner{padding: 0 5vw;}
-    nav{display: none;}
-    
-    //모바일메뉴
-    #mobileheader{display: block;
-        .xi-bars{color: #F44336;}
-    }
-    #mobilemenu{width: 35%; min-width: 160px; height: 0; overflow: hidden; display: block;
-        position: fixed; right: 0; top: 56px; z-index: 500; transition: all .3s;}
-    #mobilemenu.active{height: 100%;}
-    #mobilemenu .btn{display: block; font-size: 16px; color: #ddd;
-        text-decoration: none; text-transform: uppercase; background: #333;
-        line-height: 1em; padding: 20px; border: 1px solid #000;
-        border-top-color: #5c5c5c; position: relative;}
-    #mobilemenu .btn::before,
-    #mobilemenu .btn::after{content: ""; position: absolute; width: 12px;
-        height: 3px; right: 20px; top: 50%; margin-top: -1.5px;
-        background: #fff; transition: all .4s;}
-    #mobilemenu .btn::after{transform: rotate(90deg);}
-    #mobilemenu li.active .btn::before,
-    #mobilemenu li.active .btn::after{transform: rotate(180deg);}
-    
-    #mobilemenu .submenu1{height: 0; display: block; overflow: hidden; transition: all .4s;}
-    #mobilemenu .submenu1 a{display: block; padding: 0 30px; font-size: 15px;
-        color: #777; background: #f1f1f1; line-height: 45px;
-        height: 45px; border: 1px solid #ddd; border-top: 0;
-        text-decoration: none;}
-    
-    #mobilemenu li.active .threelines{height: 135px;}
-    #mobilemenu li.active .fourlines{height: 180px;}
+    .productlist1{flex-direction: column; text-align: center; }
+    .products{width: 100%; flex-direction: column;}
+    .productinfo{width: 100%;}
     }
 
 @media all and (max-width:665px){
