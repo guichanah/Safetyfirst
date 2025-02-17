@@ -489,7 +489,7 @@ footer hr {
     color: #F44336;
   }
   #mobilemenu {
-    width: 300px;
+    width: 100%;
     height: 0;
     overflow: hidden;
     display: block;

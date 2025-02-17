@@ -379,7 +379,7 @@ footer {
     #mobileheader{display: block;
         .xi-bars{color: #F44336;}
     }
-    #mobilemenu{width: 300px; height: 0; overflow: hidden; display: block;
+    #mobilemenu{width: 100%; height: 0; overflow: hidden; display: block;
         position: fixed; right: 0; top: 56px; z-index: 500; transition: all .3s;}
     #mobilemenu.active{height: 100%;}
     #mobilemenu .btn{display: block; font-size: 16px; color: #ddd;
