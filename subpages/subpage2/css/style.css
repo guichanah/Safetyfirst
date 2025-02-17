@@ -231,7 +231,7 @@ main {
 
 .productimg {
   width: 33.1%;
-  min-width: 170px;
+  min-width: 10px;
 }
 
 .productimg img {
