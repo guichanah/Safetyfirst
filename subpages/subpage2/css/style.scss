@@ -146,10 +146,11 @@ main {
 .productlist{width: 70%; flex-wrap: wrap;}
 .productlist1{display: flex; width: 100%; flex-wrap: wrap; word-break: keep-all;}
 .products{display: flex; padding: 3vw 0; width: 50%; gap: 2vw; align-items: center;}
-.productimg{width: 33.1%; min-width: 150px;}
+.productimg{width: 33.1%; min-width: 170px;}
 .productimg img{width: 100%;}
 .productinfo{display: flex; flex-direction: column; width: 66.9%; gap: .4vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(16px, 1.2vw, 20px); line-height: 1.5; color: #333;
 }
 
 
