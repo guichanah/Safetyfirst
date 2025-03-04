@@ -97,7 +97,7 @@ nav {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: clamp(24px , 3vw, 40px);
+    font-size: clamp(20px , 3vw, 40px);
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -409,4 +409,9 @@ footer {
         #footerinfo{flex-direction: column;}
         hr{margin: 3vw 0;}
     }
+}
+
+@media all and (max-width:400px){
+
+    .swiper-slide .intro{position: absolute; top: 50%; left: 0%;}
 }
